@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import {Modal,Button,Row,Col,Form,Image} from 'react-bootstrap';
-import Select from 'react-select';
+
 
 export class Editusermodal extends Component{
     constructor(props){
