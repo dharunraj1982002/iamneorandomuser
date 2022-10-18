@@ -32,7 +32,7 @@ def detailsAPIscreen(request, id=0):
         return JsonResponse("User updation failed: Try Again!", safe=False)
     #DELETE OPERATION
     elif(request.method == 'DELETE'):
-        delete_id = Details.objects.get(UserID = str(id))
+        delete_id = Details.objects.get(RandomID= str(id))
         delete_id.delete()
         return JsonResponse("User details deleted sucessfully!", safe=False)
 

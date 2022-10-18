@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import {Modal,Button,Row,Col,Form,Image} from 'react-bootstrap';
+import Select from 'react-select';
 
 export class Editusermodal extends Component{
     constructor(props){
@@ -9,7 +10,11 @@ export class Editusermodal extends Component{
         this.handleFileSelected = this.handleFileSelected.bind(this);
     }
 
-  componentDidMount(){
+    
+
+    
+    
+    componentDidMount(){
         fetch(process.env.REACT_APP_API)
         .then(response=>response.json)
         .then(data=>{
@@ -135,9 +140,13 @@ centered>
                 </Form.Group>
                 <Form.Group controlId="UserStatus"> 
                     <Form.Label>User status</Form.Label>
-                    <Form.Control type="text" name="UserStatus" required
-                    defaultValue={this.props.stat}
-                    placeholder="Enter User status"/>
+                    <Form.Select aria-label="Default select example">
+                        <option>Select User Status</option>
+                        <option value="exam not started">exam not started</option>
+                        <option value="exam started">exam started</option>
+                    <   option value="exam completed">exam completed</option>
+                        defaultValue={this.props.stat}
+                    </Form.Select>
                 </Form.Group>
                 <Form.Group controlId="ImageName"> 
                     <Form.Label>Image file name</Form.Label>

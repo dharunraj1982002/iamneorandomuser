@@ -8,12 +8,14 @@ export class Navigationbar extends Component{
                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav>
-                        <NavLink className="d-inline p-2 bg-dark text-white" to='/home'>
-                            Home
-                        </NavLink>
-                        <NavLink className="d-inline p-2  bg-dark text-white" to='/users'>
-                            Users
-                        </NavLink>
+                    &nbsp;&nbsp;
+                    <NavLink className="btn btn-light btn-outline-primary" to='/home'>
+                                    Home
+                    </NavLink>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <NavLink className="btn btn-light btn-outline-primary" to='/users'>
+                                    User
+                    </NavLink>
                             
                     </Nav>
                

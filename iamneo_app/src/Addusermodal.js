@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import {Modal,Button,Row,Col,Form,Image} from 'react-bootstrap';
+import Select from 'react-select';
 
 export class Addusermodal extends Component{
     constructor(props){
@@ -10,6 +11,15 @@ export class Addusermodal extends Component{
     }
     imgname = "anonymous.png"
     imgsrc = process.env.REACT_APP_PHOTOPATH+'/'+this.imgname;
+
+
+    actions = [
+        { label: "exam not started", value: 1 },
+        { label: "exam started", value: 2 },
+        { label: "exam completed", value: 3 }
+      ];
+
+
 
     componentDidMount(){
         fetch(process.env.REACT_APP_API)
@@ -82,7 +92,7 @@ centered>
 
 <Modal.Header closebutton>
     <Modal.Title id="contained-modal-title-vcenter">
-            Add User 2
+            Add User
     </Modal.Title>
 </Modal.Header>
 <Modal.Body>
@@ -126,8 +136,12 @@ centered>
                 </Form.Group>
                 <Form.Group controlId="UserStatus"> 
                     <Form.Label>User status</Form.Label>
-                    <Form.Control type="text" name="UserStatus" required
-                    placeholder="Enter User status"/>
+                    <Form.Select aria-label="Default select example">
+                        <option>Select User Status</option>
+                        <option value="exam not started">exam not started</option>
+                        <option value="exam started">exam started</option>
+                        <option value="exam completed">exam completed</option>
+                    </Form.Select>
                 </Form.Group>
                 <Form.Group controlId="ImageName"> 
                     <Form.Label>Image file name</Form.Label>
